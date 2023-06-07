@@ -1,0 +1,26 @@
+[
+    {
+        "key": "stripeverification_icon",
+        "default": "fa fa-solid fa-circle-check"
+    },
+    {
+        "key": "stripeverification_icon_color",
+        "default": "#1778f2"
+    },
+    {
+        "key": "stripeverification_publishable_key",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_secret_key",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_verification_group",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_webhook_secret",
+        "default": ""
+    }
+]

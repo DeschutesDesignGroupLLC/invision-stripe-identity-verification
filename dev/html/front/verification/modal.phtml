@@ -1,0 +1,10 @@
+<ips:template parameters="$member" />
+<div data-controller="stripeverification.front.verification.main" class="ipsPad ipsType_center">
+    {{if ! $member->verified}}
+        <div class="ipsType_light ipsType_normal">{lang="stripeverification_unverified_message"}</div>
+        <a href="#" data-verification-button class="ipsButton ipsButton_medium ipsButton_normal ipsSpacer_top">{lang="stripverification_verified_button"}</a>
+    {{else}}
+        <div class="ipsType_light ipsType_normal">{lang="stripverification_verified_message"} {datetime="$member->verified_at"}.</div>
+   {{endif}}
+</div>
+

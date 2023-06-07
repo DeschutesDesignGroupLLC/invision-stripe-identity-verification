@@ -1,0 +1,31 @@
+{
+  "topLevel": "",
+  "pages": {
+    "stripeverification_verify": {
+      "friendly": "verifications/verify/{#member}",
+      "real": "app=stripeverification&module=system&controller=verification&do=verify",
+      "seoTitles": [
+        {
+          "class": "\\IPS\\Member",
+          "queryParam": "member",
+          "property": "id"
+        }
+      ]
+    },
+    "stripeverification_unverify": {
+      "friendly": "verifications/unverify/{#member}",
+      "real": "app=stripeverification&module=system&controller=verification&do=unverify",
+      "seoTitles": [
+        {
+          "class": "\\IPS\\Member",
+          "queryParam": "member",
+          "property": "id"
+        }
+      ]
+    },
+    "modcp_stripeverification": {
+      "friendly": "modcp/verifications",
+      "real": "app=core&module=modcp&controller=modcp&tab=stripeverification"
+    }
+  }
+}

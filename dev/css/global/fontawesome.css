@@ -1,0 +1,16 @@
+.fa-solid {
+  font-family: 'Font Awesome 6 Free'; }
+
+.fa-circle-check::before {
+  content: "\f058"; }
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url({resource="fa-solid-900.woff2" app="stripeverification" location="front"}) format("woff2"), url({resource="fa-solid-900.ttf" app="stripeverification" location="front"}) format("truetype"); }
+
+.fa-solid {
+  font-weight: 900;
+}

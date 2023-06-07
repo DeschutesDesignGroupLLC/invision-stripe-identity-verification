@@ -1,0 +1,10 @@
+{
+    "core": {
+        "ModCp": {
+            "Verification": "IPS\\stripeverification\\extensions\\core\\ModCp\\Verification"
+        },
+        "Notifications": {
+            "Verification": "IPS\\stripeverification\\extensions\\core\\Notifications\\Verification"
+        }
+    }
+}

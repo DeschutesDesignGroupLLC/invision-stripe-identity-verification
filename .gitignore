@@ -1,0 +1,29 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+_config.yml
+
+# Ignore our documentation files
+output
+docs
+
+# Ignore our build files
+bin
+
+# Ignore ioncube config
+*.iep
+
+# Ignore test cache files
+tests/*.cache
+
+# Logs
+logs
+
+# Ignore our dependencies
+vendor
+invision
+
+# Environment variables
+.env

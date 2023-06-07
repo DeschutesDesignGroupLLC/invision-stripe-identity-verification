@@ -1,0 +1,27 @@
+{
+  "name": "deschutesdesigngroupllc/invision-stripe-indentity-verification",
+  "description": "An application allowing your users to verify their identity through Stripe Identity Verification",
+  "keywords": [
+    "ipb",
+    "invision",
+    "stripe",
+    "identity verification"
+  ],
+  "authors": [
+    {
+      "name": "Jon Erickson",
+      "email": "jon@deschutesdesigngroup.com",
+      "homepage": "https://www.deschutesdesigngroup.com",
+      "role": "Owner"
+    }
+  ],
+  "homepage": "https://www.deschutesdesigngroup.com/",
+  "require": {
+    "php": "^8.1",
+    "stripe/stripe-php": "^v10.14",
+    "symfony/http-foundation": "^v6.3"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^6.3"
+  }
+}

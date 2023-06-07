@@ -1,0 +1,14 @@
+{
+    "userBar": {
+        "type": "S",
+        "class": "\\IPS\\Theme\\class_core_front_global"
+    },
+    "Member": {
+        "type": "C",
+        "class": "\\IPS\\Member"
+    },
+    "profileHeader": {
+        "type": "S",
+        "class": "\\IPS\\Theme\\class_core_front_profile"
+    }
+}
