@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javascript app="stripeverification">
+ <file javascript_app="stripeverification" javascript_location="front" javascript_path="controllers/verification" javascript_name="ips.verification.main.js" javascript_type="controller" javascript_version="10000" javascript_position="1000050"><![CDATA[;( function($, _, undefined){
+    "use strict";
+
+    ips.controller.register('stripeverification.front.verification.main', {
+        stripeClient: false,
+
+        initialize: function () {
+            this.setup();
+            this.on('click', '[data-verification-button]', this.startVerification);
+        },
+
+        setup: function () {
+            var self = this;
+
+            ips.loader.get(['https://js.stripe.com/v3/']).then( function () {
+                ips.getAjax()('?app=stripeverification&module=system&controller=verification&do=key').done(function(response, status, jqXHR) {
+                    self.stripeClient = Stripe(response.key)
+                });
+            });
+        },
+
+        startVerification: function () {
+            var self = this;
+
+            ips.getAjax()('?app=stripeverification&module=system&controller=verification&do=start').done(function(response, status, jqXHR) {
+                return self.stripeClient.verifyIdentity(response.secret);
+            });
+        }
+    });
+}(jQuery, _));]]></file>
+</javascript>

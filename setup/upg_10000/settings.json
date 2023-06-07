@@ -1,0 +1,12 @@
+{
+    "added": [
+        "stripeverification_icon",
+        "stripeverification_icon_color",
+        "stripeverification_publishable_key",
+        "stripeverification_secret_key",
+        "stripeverification_verification_group",
+        "stripeverification_webhook_secret"
+    ],
+    "edited": [],
+    "removed": []
+}

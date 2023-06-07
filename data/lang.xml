@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+ <app key="stripeverification" version="10000">
+  <word key="__app_stripeverification" js="0">Stripe Identity Verification</word>
+  <word key="menutab__stripeverification" js="0">Stripe Verification</word>
+  <word key="menutab__stripeverification_icon" js="0">cc-stripe</word>
+  <word key="menu__stripeverification_system" js="0">System</word>
+  <word key="menu__stripeverification_system_settings" js="0">Settings</word>
+  <word key="module__stripeverification_system" js="0">System</word>
+  <word key="modcp_stripeverification" js="0">Verifications</word>
+  <word key="modcp_stripeverification_verify" js="0">Verify Member</word>
+  <word key="modcp_stripeverification_verified" js="0">The member has been successfully verified.</word>
+  <word key="modcp_stripeverification_unverify" js="0">Unverify Member</word>
+  <word key="modcp_stripeverification_unverified" js="0">The member has been successfully unverified.</word>
+  <word key="notifications__stripeverification_Verification" js="0">Verification</word>
+  <word key="notifications__stripeverification_Verification_desc" js="0">Subscribe to notifications when your verification status is updated.</word>
+  <word key="stripeverification_notification_verified" js="0">Your account has been verified</word>
+  <word key="stripeverification_notification_verified_message" js="0">Your account has been successfully verified. Please reach out if you have any other questions.</word>
+  <word key="stripeverification_notification_unverified" js="0">Your account has been unverified</word>
+  <word key="stripeverification_notification_unverified_message" js="0">Your account has been unverified. If this was a mistake, please reach out for additional support.</word>
+  <word key="__api_stripeverification_webhook" js="0">Webhook</word>
+  <word key="mailsub__stripeverification_notification_verified" js="0">Verified</word>
+  <word key="mailsub__stripeverification_notification_unverified" js="0">Unverified</word>
+  <word key="stripeverification_userbar" js="0">Verification Status</word>
+  <word key="stripeverification_stripe_settings" js="0">Stripe Settings</word>
+  <word key="stripeverification_publishable_key" js="0">Publishable Key</word>
+  <word key="stripeverification_secret_key" js="0">Secret Key</word>
+  <word key="stripeverification_webhook_secret" js="0">Webhook Secret</word>
+  <word key="stripeverification_icon_settings" js="0">Icon Settings</word>
+  <word key="stripeverification_icon_color" js="0">Color</word>
+  <word key="stripeverification_icon_color_desc" js="0">The color of the verification icon.</word>
+  <word key="stripeverification_icon" js="0">Icon</word>
+  <word key="stripeverification_icon_desc" js="0"><![CDATA[The <a target="_blank" href="https://fontawesome.com">Font Awesome</a> icon that will be used.]]></word>
+  <word key="stripeverification_verification_group" js="0">Verified Group</word>
+  <word key="stripeverification_verification_group_desc" js="0">The group members will be moved to when verified.</word>
+  <word key="stripeverification_verification_settings" js="0">Verification Settings</word>
+  <word key="stripverification_verified_button" js="0">Start Verification Process</word>
+  <word key="stripverification_verified_message" js="0">Your account was successfully verfied</word>
+  <word key="stripeverification_unverified_message" js="0">You are not currently verified. Please start the verification process to get verified.</word>
+  <word key="stripeverification_error_cannot_start_verification" js="0">Please complete the Stripe Identity Verifiection setup before attempting to verify your identity.</word>
+  <word key="stripverification_member_id" js="0">Member</word>
+  <word key="stripverification_verified" js="0">Verified</word>
+  <word key="stripverification_verified_at" js="0">Verified At</word>
+  <word key="stripverification_verify" js="0"></word>
+ </app>
+</language>

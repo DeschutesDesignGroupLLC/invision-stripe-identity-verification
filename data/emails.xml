@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emails><template><template_app>stripeverification</template_app><template_name>notification_verified</template_name><template_content_html><![CDATA[<ips:template parameters="$email" />]]></template_content_html><template_data/><template_content_plaintext><![CDATA[<ips:template parameters="$email" />]]></template_content_plaintext><template_pinned>0</template_pinned></template></emails>

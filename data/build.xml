@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build>
+ <module key="admin/system"><![CDATA[{"default_controller":"settings","protected":0,"default":0}]]></module>
+ <module key="front/system"><![CDATA[{"default_controller":"","protected":false,"default":null}]]></module>
+ <setting key="stripeverification_icon"><![CDATA[{"key":"stripeverification_icon","default":"fa fa-solid fa-circle-check"}]]></setting>
+ <setting key="stripeverification_icon_color"><![CDATA[{"key":"stripeverification_icon_color","default":"#1778f2"}]]></setting>
+ <setting key="stripeverification_publishable_key"><![CDATA[{"key":"stripeverification_publishable_key","default":""}]]></setting>
+ <setting key="stripeverification_secret_key"><![CDATA[{"key":"stripeverification_secret_key","default":""}]]></setting>
+ <setting key="stripeverification_verification_group"><![CDATA[{"key":"stripeverification_verification_group","default":""}]]></setting>
+ <setting key="stripeverification_webhook_secret"><![CDATA[{"key":"stripeverification_webhook_secret","default":""}]]></setting>
+ <hook key="userBar"><![CDATA[{"type":"S","class":"\\IPS\\Theme\\class_core_front_global"}]]></hook>
+ <hook key="Member"><![CDATA[{"type":"C","class":"\\IPS\\Member"}]]></hook>
+ <hook key="profileHeader"><![CDATA[{"type":"S","class":"\\IPS\\Theme\\class_core_front_profile"}]]></hook>
+</build>

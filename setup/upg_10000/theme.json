@@ -1,0 +1,28 @@
+{
+    "html": {
+        "added": [
+            "front\/modcp\/unverifyButton",
+            "front\/modcp\/verifications",
+            "front\/modcp\/verifyButton",
+            "front\/verification\/check",
+            "front\/verification\/modal"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "css": {
+        "added": [
+            "global\/fontawesome.css"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [
+            "front\/fa-solid-900.ttf",
+            "front\/fa-solid-900.woff2"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}
