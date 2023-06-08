@@ -2,9 +2,13 @@
 
 Upgrade your Invision Community website with our revolutionary member verification application. Designed to enhance member reputation and instill confidence, this easy-to-use app brings verification to life. Powered by Stripe Identity, it offers a seamless verification process that empowers your members. With a simple verification checkmark displayed next to their names, your community gains a new level of trust and credibility. Take it a step further by configuring Stripe Identity Verification to automatically add verified members to special groups, fostering exclusivity and engagement. Elevate your website's user experience effortlessly with this plug-and-play app that will transform your community interactions.
 
-Read more on Stripe Identity.
+Read more on [Stripe Identity](https://www.stripe.com/identity).
 
-Visit Deschutes Design Group LLC for a working example.
+Visit [Deschutes Design Group LLC](https://www.deschutesdesigngroup.com) for a working example.
+
+**[Community Forums](https://community.deschutesdesigngroup.com)**
+
+**[Support](https://www.deschutesdesigngroup.com/support)**
 
 ## Installation Instructions
 
