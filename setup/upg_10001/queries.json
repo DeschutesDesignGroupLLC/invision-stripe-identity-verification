@@ -1,0 +1,39 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "stripeverification_verifications",
+            {
+                "name": "submitted_at",
+                "type": "INT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "2": {
+        "method": "changeColumn",
+        "params": [
+            "stripeverification_verifications",
+            "submitted_at",
+            {
+                "name": "submitted_at",
+                "type": "INT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

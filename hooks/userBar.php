@@ -27,14 +27,14 @@ class stripeverification_hook_userBar extends _HOOK_CLASS_
                 1 => [
                     'selector' => '#elUserLink > i.fa.fa-caret-down',
                     'type' => 'add_before',
-                    'content' => '{template="check" app="stripeverification" location="front" group="verification"}',
+                    'content' => '{template="check" app="stripeverification" location="front" group="verification" params="\IPS\Member::loggedIn(), 16"}',
                 ],
             ],
             'userLink' => [
                 0 => [
                     'selector' => 'a[rel=\'nofollow\'][data-ipshover-width=\'370\'].ipsType_break',
                     'type' => 'add_after',
-                    'content' => '{template="check" app="stripeverification" location="front" group="verification"}',
+                    'content' => '{template="check" app="stripeverification" location="front" group="verification" params="$member"}',
                 ],
             ],
         ], parent::hookData());

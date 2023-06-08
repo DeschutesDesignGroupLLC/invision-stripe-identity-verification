@@ -1,10 +1,13 @@
-<ips:template parameters="$member" />
-<div data-controller="stripeverification.front.verification.main" class="ipsPad ipsType_center">
-    {{if ! $member->verified}}
-        <div class="ipsType_light ipsType_normal">{lang="stripeverification_unverified_message"}</div>
+<ips:template parameters="" />
+<div data-controller="stripeverification.front.verification.main" class="ipsPad ipsType_center ipsType_light ipsType_normal">
+    {{if \IPS\Member::loggedIn()->verification_processing}}
+        <div id="stripeverification_processing_message">{lang="stripeverification_processing_message"}</div>
+    {{elseif ! \IPS\Member::loggedIn()->verified}}
+        <div id="stripeverification_info_message">{lang="stripeverification_unverified_message"}</div>
+        <div id="stripeverification_submit_message" style="display: none;">{lang="stripeverification_submit_message"}</div>
         <a href="#" data-verification-button class="ipsButton ipsButton_medium ipsButton_normal ipsSpacer_top">{lang="stripverification_verified_button"}</a>
     {{else}}
-        <div class="ipsType_light ipsType_normal">{lang="stripverification_verified_message"} {datetime="$member->verified_at"}.</div>
-   {{endif}}
+        <div id="stripeverification_verified_message">{lang="stripverification_verified_message"} {datetime="\IPS\Member::loggedIn()->verified_at"}.</div>
+    {{endif}}
 </div>
 

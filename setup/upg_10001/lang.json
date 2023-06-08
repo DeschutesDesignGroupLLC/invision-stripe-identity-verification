@@ -1,0 +1,18 @@
+{
+    "normal": {
+        "added": [
+            "stripeverification_processing_message",
+            "stripeverification_submit_message",
+            "stripverification_submitted_at"
+        ],
+        "edited": [
+            "stripverification_verify"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

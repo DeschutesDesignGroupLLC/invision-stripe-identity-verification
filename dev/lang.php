@@ -52,11 +52,14 @@ $lang = [
     'stripverification_verified_button' => 'Start Verification Process',
     'stripverification_verified_message' => 'Your account was successfully verfied',
     'stripeverification_unverified_message' => 'You are not currently verified. Please start the verification process to get verified.',
+    'stripeverification_processing_message' => 'Your verification is currently processing. Please wait for a notification within the next 24 hours to confirm your verification.',
+    'stripeverification_submit_message' => 'Your verification request was submitted and is now processing. Please wait for a notification within the next 24 hours to confirm your verification.',
 
     'stripeverification_error_cannot_start_verification' => 'Please complete the Stripe Identity Verifiection setup before attempting to verify your identity.',
 
     'stripverification_member_id' => 'Member',
     'stripverification_verified' => 'Verified',
     'stripverification_verified_at' => 'Verified At',
-    'stripverification_verify' => '',
+    'stripverification_submitted_at' => 'Submitted At',
+    'stripverification_verify' => 'Actions',
 ];

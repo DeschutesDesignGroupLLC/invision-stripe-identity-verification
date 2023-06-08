@@ -1,6 +1,6 @@
-<ips:template parameters="$size='fa-lg'" />
-{{if \IPS\Member::loggedIn()->verified}}
-    <span style="color: {setting='stripeverification_icon_color'};">
-        <i style="margin: 2px;"; class="{setting='stripeverification_icon'} {$size}"></i>
+<ips:template parameters="$member, $size=null" />
+{{if $member->verified}}
+    <span style="color: {setting='stripeverification_icon_color'}; margin: 0px; padding: 0px; background: none;">
+        <i style="margin: 2px; {{if $size}}font-size: {$size}px;{{endif}}" class="{setting='stripeverification_icon'}"></i>
     </span>
 {{endif}}

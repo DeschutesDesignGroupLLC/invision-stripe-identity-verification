@@ -50,13 +50,13 @@ class _Verification
         $table = new \IPS\Helpers\Table\Db(\IPS\stripeverification\System\Verification::$databaseTable, \IPS\Http\Url::internal('app=core&module=modcp&controller=modcp&tab=verifications'));
         $table->tableTemplate = [\IPS\Theme::i()->getTemplate('tables', 'core', 'admin'), 'table'];
         $table->rowsTemplate = [\IPS\Theme::i()->getTemplate('tables', 'core', 'admin'), 'rows'];
-        $table->include = ['member_id', 'verified', 'verified_at', 'verify'];
+        $table->include = ['member_id', 'verified', 'verified_at', 'submitted_at', 'verify'];
         $table->mainColumn = 'verified_at';
         $table->sortBy = 'verified_at';
         $table->sortDirection = 'desc';
         $table->sortOptions = ['verified_at'];
         $table->langPrefix = 'stripverification_';
-        $table->widths = ['member_id' => 40, 'verified' => 10, 'verified_at' => 40];
+        $table->widths = ['member_id' => 25, 'verified' => 15, 'verified_at' => 25, 'submitted_at' => 25];
         $table->title = \IPS\Member::loggedIn()->language()->addToStack('modcp_stripeverification');
 
         $table->parsers = [
@@ -66,12 +66,19 @@ class _Verification
                 return \IPS\Theme::i()->getTemplate('global', 'core')->userPhoto($member, 'tiny').' '.$member->link();
             },
             'verified' => function ($val, $row) {
+                $member = \IPS\Member::load($row['member_id']);
+
                 return match (true) {
-                    (bool) $val => 'Verified',
-                    ! $val => 'Not Verified'
+                    $member->verified => 'Verified',
+                    $member->verification_processing => 'Processing',
+                    ! $val => 'Not Verified',
+                    default => 'Not Verified'
                 };
             },
             'verified_at' => function ($val, $row) {
+                return $val ? \IPS\DateTime::ts($val) : null;
+            },
+            'submitted_at' => function ($val, $row) {
                 return $val ? \IPS\DateTime::ts($val) : null;
             },
             'verify' => function ($val, $row) {

@@ -19,6 +19,7 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
         $verification->member_id = $this->member_id;
         $verification->verified = 1;
         $verification->verified_at = \IPS\DateTime::create()->getTimestamp();
+        $verification->submitted_at = null;
         $verification->save();
 
         $groups = explode(',', $this->mgroup_others);
@@ -38,12 +39,28 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
     /**
      * @return \IPS\stripeverification\System\Verification
      */
+    public function markMemberVerificationProcessing()
+    {
+        $verification = $this->verification ?: new \IPS\stripeverification\System\Verification();
+        $verification->member_id = $this->member_id;
+        $verification->verified = 0;
+        $verification->verified_at = null;
+        $verification->submitted_at = \IPS\DateTime::create()->getTimestamp();
+        $verification->save();
+
+        return $verification;
+    }
+
+    /**
+     * @return \IPS\stripeverification\System\Verification
+     */
     public function markMemberUnverified()
     {
         $verification = $this->verification ?: new \IPS\stripeverification\System\Verification();
         $verification->member_id = $this->member_id;
         $verification->verified = 0;
         $verification->verified_at = null;
+        $verification->submitted_at = null;
         $verification->save();
 
         $groups = explode(',', $this->mgroup_others);
@@ -77,16 +94,32 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
     /**
      * @return bool
      */
+    public function get_verification_processing()
+    {
+        return ! $this->verified && isset($this->verification?->submitted_at);
+    }
+
+    /**
+     * @return bool
+     */
     public function get_verified()
     {
         return (bool) $this->verification?->verified;
     }
 
     /**
-     * @return null
+     * @return \IPS\DateTime|null
      */
     public function get_verified_at()
     {
         return $this->verified && $this->verification?->verified_at ? \IPS\DateTime::ts($this->verification->verified_at) : null;
+    }
+
+    /**
+     * @return \IPS\DateTime|null
+     */
+    public function get_verification_submitted_at()
+    {
+        return $this->verification?->submitted_at ? \IPS\DateTime::ts($this->verification->submitted_at) : null;
     }
 }

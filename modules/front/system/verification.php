@@ -32,7 +32,7 @@ class _verification extends \IPS\Dispatcher\Controller
     protected function manage()
     {
         \IPS\Output::i()->jsFiles = array_merge(\IPS\Output::i()->jsFiles, \IPS\Output::i()->js('front_verification.js', 'stripeverification', 'front'));
-        \IPS\Output::i()->output = \IPS\Theme::i()->getTemplate('verification', 'stripeverification', 'front')->modal(\IPS\Member::loggedIn());
+        \IPS\Output::i()->output = \IPS\Theme::i()->getTemplate('verification', 'stripeverification', 'front')->modal();
     }
 
     /**
@@ -53,6 +53,17 @@ class _verification extends \IPS\Dispatcher\Controller
         \IPS\Output::i()->json([
             'secret' => (string) \IPS\stripeverification\System\Manager::i()->startVerificationProcess(),
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    protected function finish()
+    {
+        $member = \IPS\Member::loggedIn();
+        $member->markMemberVerificationProcessing();
+
+        return null;
     }
 
     /**
