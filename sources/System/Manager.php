@@ -19,7 +19,9 @@ class _Manager extends \IPS\Patterns\Singleton
      */
     public function canStartVerificationProcess()
     {
-        return isset(\IPS\Settings::i()->stripeverification_secret_key, \IPS\Settings::i()->stripeverification_publishable_key);
+        return ! empty(\IPS\Settings::i()->stripeverification_secret_key) ||
+            ! empty(\IPS\Settings::i()->stripeverification_publishable_key) ||
+            ! empty(\IPS\Settings::i()->stripeverification_webhook_secret);
     }
 
     /**

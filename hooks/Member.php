@@ -39,14 +39,17 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
     /**
      * @return \IPS\stripeverification\System\Verification
      */
-    public function markMemberVerificationProcessing()
+    public function markMemberVerificationProcessing(bool $force = false)
     {
         $verification = $this->verification ?: new \IPS\stripeverification\System\Verification();
-        $verification->member_id = $this->member_id;
-        $verification->verified = 0;
-        $verification->verified_at = null;
-        $verification->submitted_at = \IPS\DateTime::create()->getTimestamp();
-        $verification->save();
+
+        if (! $this->verified || $force) {
+            $verification->member_id = $this->member_id;
+            $verification->verified = 0;
+            $verification->verified_at = null;
+            $verification->submitted_at = \IPS\DateTime::create()->getTimestamp();
+            $verification->save();
+        }
 
         return $verification;
     }
