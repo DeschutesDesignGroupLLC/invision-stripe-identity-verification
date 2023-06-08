@@ -71,8 +71,7 @@ class _verification extends \IPS\Dispatcher\Controller
      */
     protected function verify()
     {
-        $member = \IPS\Member::load(\IPS\Request::i()->member);
-
+        $member = \IPS\Member::loggedIn();
         $member->markMemberVerified();
 
         \IPS\Output::i()->redirect(\IPS\Http\Url::internal('app=core&module=modcp&controller=modcp&tab=stripeverification', 'front', 'modcp_stripeverification'), 'modcp_stripeverification_verified');
@@ -83,8 +82,7 @@ class _verification extends \IPS\Dispatcher\Controller
      */
     protected function unverify()
     {
-        $member = \IPS\Member::load(\IPS\Request::i()->member);
-
+        $member = \IPS\Member::loggedIn();
         $member->markMemberUnverified();
 
         \IPS\Output::i()->redirect(\IPS\Http\Url::internal('app=core&module=modcp&controller=modcp&tab=stripeverification', 'front', 'modcp_stripeverification'), 'modcp_stripeverification_unverified');

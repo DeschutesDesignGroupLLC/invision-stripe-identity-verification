@@ -4,7 +4,7 @@
     "steps": {
         "queries": false,
         "lang": false,
-        "theme": false,
+        "theme": true,
         "themeSettings": false,
         "javascript": false,
         "emailTemplates": false,

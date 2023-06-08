@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme name="Default" author_name="Invision Power Services, Inc" author_url="https://www.invisioncommunity.com">
- <template template_group="modcp" template_name="unverifyButton" template_data="$member" template_location="front" template_app="stripeverification"><![CDATA[<a class="ipsButton ipsButton_small ipsButton_link" target="self" href='{url="app=stripeverification&module=system&controller=verification&do=unverify&member=$member" seoTemplate="stripeverification_unverify" seoTitle="$member"}'>{lang="modcp_stripeverification_unverify"}</a>]]></template>
+ <template template_group="modcp" template_name="unverifyButton" template_data="$member" template_location="front" template_app="stripeverification"><![CDATA[<a class="ipsButton ipsButton_small ipsButton_link" target="self" href='{url="app=stripeverification&module=system&controller=verification&do=unverify" seoTemplate="stripeverification_unverify"}'>{lang="modcp_stripeverification_unverify"}</a>]]></template>
  <template template_group="modcp" template_name="verifications" template_data="$table" template_location="front" template_app="stripeverification"><![CDATA[<div class='ipsBox'>
     <h2 class="ipsType_sectionTitle ipsType_reset">{lang="modcp_stripeverification"}</h2>
 	<div class='ipsClear'>
 		{$table|raw}
 	</div>
 </div>]]></template>
- <template template_group="modcp" template_name="verifyButton" template_data="$member" template_location="front" template_app="stripeverification"><![CDATA[<a class="ipsButton ipsButton_small ipsButton_link" target="self" href='{url="app=stripeverification&module=system&controller=verification&do=verify&member=$member" seoTemplate="stripeverification_verify" seoTitle="$member"}'>{lang="modcp_stripeverification_verify"}</a>]]></template>
+ <template template_group="modcp" template_name="verifyButton" template_data="$member" template_location="front" template_app="stripeverification"><![CDATA[<a class="ipsButton ipsButton_small ipsButton_link" target="self" href='{url="app=stripeverification&module=system&controller=verification&do=verify" seoTemplate="stripeverification_verify"}'>{lang="modcp_stripeverification_verify"}</a>]]></template>
  <template template_group="verification" template_name="check" template_data="$member, $size=null" template_location="front" template_app="stripeverification"><![CDATA[{{if $member->verified}}
     <span style="color: {setting='stripeverification_icon_color'}; margin: 0px; padding: 0px; background: none;">
         <i style="margin: 2px; {{if $size}}font-size: {$size}px;{{endif}}" class="{setting='stripeverification_icon'}"></i>
