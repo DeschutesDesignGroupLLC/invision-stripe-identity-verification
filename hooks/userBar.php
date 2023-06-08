@@ -18,7 +18,7 @@ class stripeverification_hook_userBar extends _HOOK_CLASS_
                 0 => [
                     'selector' => '#elUserNav > li.cNotifications.cUserNav_icon',
                     'type' => 'add_after',
-                    'content' => '<li class=\'cNotifications cUserNav_icon\'>
+                    'content' => '<li class=\'cVerifications cUserNav_icon\'>
 			<a href=\'{url="app=stripeverification&module=system&controller=verification"}\' id=\'elVerificationStatus\' data-ipsTooltip title=\'{lang="stripeverification_userbar" escape="true"}\' data-ipsDialog data-ipsDialog-size="narrow" data-ipsDialog-title=\'{lang="stripeverification_userbar" escape="true"}\' >
 				<i class=\'fa fa-solid fa-circle-check\'></i>
             </a>

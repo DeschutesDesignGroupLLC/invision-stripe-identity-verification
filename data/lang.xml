@@ -45,5 +45,7 @@
   <word key="stripverification_verified_at" js="0">Verified At</word>
   <word key="stripverification_submitted_at" js="0">Submitted At</word>
   <word key="stripverification_verify" js="0">Actions</word>
+  <word key="modperms__stripeverification_Verifications" js="0">Verifications</word>
+  <word key="can_manage_verifications" js="0">Can manage verifications?</word>
  </app>
 </language>

@@ -43,11 +43,11 @@ class _Verification
      */
     public function manage()
     {
-        if (! \IPS\Member::loggedIn()->modPermission('can_manage_announcements')) {
-            \IPS\Output::i()->error('no_module_permission', '3S148/2', 403, '');
+        if (! \IPS\Member::loggedIn()->modPermission('can_manage_verifications')) {
+            \IPS\Output::i()->error('no_module_permission', '1APP/2', 403);
         }
 
-        $table = new \IPS\Helpers\Table\Db(\IPS\stripeverification\System\Verification::$databaseTable, \IPS\Http\Url::internal('app=core&module=modcp&controller=modcp&tab=verifications'));
+        $table = new \IPS\Helpers\Table\Db(\IPS\stripeverification\System\Verification::$databaseTable, \IPS\Http\Url::internal('app=core&module=modcp&controller=modcp&tab=stripeverification'));
         $table->tableTemplate = [\IPS\Theme::i()->getTemplate('tables', 'core', 'admin'), 'table'];
         $table->rowsTemplate = [\IPS\Theme::i()->getTemplate('tables', 'core', 'admin'), 'rows'];
         $table->include = ['member_id', 'verified', 'verified_at', 'submitted_at', 'verify'];

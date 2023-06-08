@@ -3,6 +3,9 @@
         "ModCp": {
             "Verification": "IPS\\stripeverification\\extensions\\core\\ModCp\\Verification"
         },
+        "ModeratorPermissions": {
+            "Verifications": "IPS\\stripeverification\\extensions\\core\\ModeratorPermissions\\Verifications"
+        },
         "Notifications": {
             "Verification": "IPS\\stripeverification\\extensions\\core\\Notifications\\Verification"
         }

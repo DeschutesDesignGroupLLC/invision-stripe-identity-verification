@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [
+            "modperms__stripeverification_Verifications",
+            "can_manage_verifications"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -62,4 +62,7 @@ $lang = [
     'stripverification_verified_at' => 'Verified At',
     'stripverification_submitted_at' => 'Submitted At',
     'stripverification_verify' => 'Actions',
+
+    'modperms__stripeverification_Verifications' => 'Verifications',
+    'can_manage_verifications' => 'Can manage verifications?'
 ];
