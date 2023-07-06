@@ -1,11 +1,11 @@
 .fa-solid {
-  font-family: 'Font Awesome 6 Free'; }
+  font-family: 'Stripe Verification'; }
 
 .fa-circle-check::before {
   content: "\f058"; }
 
 @font-face {
-  font-family: 'Font Awesome 6 Free';
+  font-family: 'Stripe Verification';
   font-style: normal;
   font-weight: 900;
   font-display: block;

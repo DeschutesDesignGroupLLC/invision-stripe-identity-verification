@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
- <app key="stripeverification" version="10004">
+ <app key="stripeverification" version="10005">
   <word key="__app_stripeverification" js="0">Stripe Identity Verification</word>
   <word key="menutab__stripeverification" js="0">Stripe Verification</word>
   <word key="menutab__stripeverification_icon" js="0">cc-stripe</word>

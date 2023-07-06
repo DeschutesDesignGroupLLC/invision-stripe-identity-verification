@@ -23,8 +23,6 @@ class _Application extends \IPS\Application
     public function __construct()
     {
         require_once static::getRootPath().'/applications/stripeverification/sources/vendor/autoload.php';
-
-        \IPS\Output::i()->cssFiles = array_merge(\IPS\Output::i()->cssFiles, \IPS\Theme::i()->css('fontawesome.css', 'stripeverification', 'global'));
     }
 
     /**
