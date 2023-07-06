@@ -10,5 +10,9 @@
     "profileHeader": {
         "type": "S",
         "class": "\\IPS\\Theme\\class_core_front_profile"
+    },
+    "css": {
+        "type": "S",
+        "class": "\\IPS\\Theme\\class_core_front_global"
     }
 }

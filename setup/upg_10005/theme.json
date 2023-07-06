@@ -1,0 +1,21 @@
+{
+    "html": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "css": {
+        "added": [
+            "front\/stripeverification.css"
+        ],
+        "edited": [],
+        "removed": [
+            "global\/fontawesome.css"
+        ]
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}
