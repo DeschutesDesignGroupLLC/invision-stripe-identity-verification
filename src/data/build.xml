@@ -13,4 +13,5 @@
  <hook key="userBar"><![CDATA[{"type":"S","class":"\\IPS\\Theme\\class_core_front_global"}]]></hook>
  <hook key="Member"><![CDATA[{"type":"C","class":"\\IPS\\Member"}]]></hook>
  <hook key="profileHeader"><![CDATA[{"type":"S","class":"\\IPS\\Theme\\class_core_front_profile"}]]></hook>
+ <hook key="css"><![CDATA[{"type":"S","class":"\\IPS\\Theme\\class_core_front_global"}]]></hook>
 </build>

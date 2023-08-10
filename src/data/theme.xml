@@ -32,14 +32,14 @@
 </div>
 
 ]]></template>
- <css css_location="global" css_app="stripeverification" css_attributes="" css_path="." css_name="fontawesome.css">.fa-solid {
-  font-family: 'Font Awesome 6 Free'; }
+ <css css_location="front" css_app="stripeverification" css_attributes="" css_path="." css_name="stripeverification.css">.fa-solid {
+  font-family: 'Stripe Verification'; }
 
 .fa-circle-check::before {
   content: &quot;\f058&quot;; }
 
 @font-face {
-  font-family: 'Font Awesome 6 Free';
+  font-family: 'Stripe Verification';
   font-style: normal;
   font-weight: 900;
   font-display: block;
