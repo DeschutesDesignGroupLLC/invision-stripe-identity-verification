@@ -1,5 +1,13 @@
 [
     {
+        "key": "stripeverification_commerce_enabled",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_commerce_subscription",
+        "default": ""
+    },
+    {
         "key": "stripeverification_icon",
         "default": "fa fa-solid fa-circle-check"
     },

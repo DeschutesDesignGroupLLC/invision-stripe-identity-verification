@@ -5,19 +5,8 @@ services:
     ports:
       - '80:80'
     volumes:
-      - './invision:/var/www/html' # Edit For Your Local Environment
-      - './api/:/var/www/html/applications/stripeverification/api'
-      - './data/:/var/www/html/applications/stripeverification/data'
-      - './dev/:/var/www/html/applications/stripeverification/dev'
-      - './extensions/:/var/www/html/applications/stripeverification/extensions'
-      - './hooks/:/var/www/html/applications/stripeverification/hooks'
-      - './interface/:/var/www/html/applications/stripeverification/interface'
-      - './modules/:/var/www/html/applications/stripeverification/modules'
-      - './setup/:/var/www/html/applications/stripeverification/setup'
-      - './sources:/var/www/html/applications/stripeverification/sources'
-      - './tasks/:/var/www/html/applications/stripeverification/tasks'
-      - './widgets/:/var/www/html/applications/stripeverification/widgets'
-      - './Application.php:/var/www/html/applications/stripeverification/Application.php'
+      - './invision:/var/www/html'
+      - './src:/var/www/html/applications/stripeverification'
       - './nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf'
     networks:
       - invision
@@ -28,26 +17,15 @@ services:
       - mailhog
   php:
     build:
-      context: ./docker/8.0
+      context: .
       dockerfile: Dockerfile
     image: invision-8.0/app
     volumes:
-      - './invision:/var/www/html' # Edit For Your Local Environment
-      - './api/:/var/www/html/applications/stripeverification/api'
-      - './data/:/var/www/html/applications/stripeverification/data'
-      - './dev/:/var/www/html/applications/stripeverification/dev'
-      - './extensions/:/var/www/html/applications/stripeverification/extensions'
-      - './hooks/:/var/www/html/applications/stripeverification/hooks'
-      - './interface/:/var/www/html/applications/stripeverification/interface'
-      - './modules/:/var/www/html/applications/stripeverification/modules'
-      - './setup/:/var/www/html/applications/stripeverification/setup'
-      - './sources:/var/www/html/applications/stripeverification/sources'
-      - './tasks/:/var/www/html/applications/stripeverification/tasks'
-      - './widgets/:/var/www/html/applications/stripeverification/widgets'
-      - './Application.php:/var/www/html/applications/stripeverification/Application.php'
+      - './invision:/var/www/html'
+      - './src:/var/www/html/applications/stripeverification'
       - './php/conf.d/php.ini:/usr/local/etc/php/conf.d/100-custom.ini'
     extra_hosts:
-      host.docker.internal: host-gateway
+      - 'host.docker.internal:host-gateway'
     networks:
       - invision
   mysql:

@@ -1,0 +1,22 @@
+{
+    "normal": {
+        "added": [
+            "stripeverification_stripe_settings_tab",
+            "stripeverification_commerce_settings_tab",
+            "stripeverification_commerce_settings",
+            "stripeverification_commerce_enabled",
+            "stripeverification_commerce_enabled_desc",
+            "stripeverification_commerce_subscription",
+            "stripeverification_commerce_subscription_desc",
+            "stripverification_purchase_subscription_button",
+            "stripverification_purchase_subscription_message"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

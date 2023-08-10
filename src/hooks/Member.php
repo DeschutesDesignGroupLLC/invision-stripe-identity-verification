@@ -95,6 +95,23 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
     }
 
     /**
+     * @return false|\IPS\nexus\Subscription
+     */
+    public function get_verification_subscription()
+    {
+        if (\IPS\Application::appIsEnabled('nexus') && $packageId = \IPS\Settings::i()->stripeverification_commerce_subscription) {
+            try {
+                $package = \IPS\nexus\Subscription\Package::load($packageId);
+
+                return \IPS\nexus\Subscription::loadByMemberAndPackage($this, $package);
+            } catch (\OutOfRangeException) {
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @return bool
      */
     public function get_verification_processing()
@@ -107,7 +124,13 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
      */
     public function get_verified()
     {
-        return (bool) $this->verification?->verified;
+        $verified = (bool) $this->verification?->verified;
+
+        if (\IPS\Application::appIsEnabled('nexus') && \IPS\Settings::i()->stripeverification_commerce_enabled) {
+            $verified = $verified && $this->verification_subscription;
+        }
+
+        return $verified;
     }
 
     /**
