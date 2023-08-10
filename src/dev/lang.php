@@ -32,11 +32,20 @@ $lang = [
 
     'stripeverification_userbar' => 'Verification Status',
 
+    'stripeverification_stripe_settings_tab' => 'Stripe',
     'stripeverification_stripe_settings' => 'Stripe Settings',
 
     'stripeverification_publishable_key' => 'Publishable Key',
     'stripeverification_secret_key' => 'Secret Key',
     'stripeverification_webhook_secret' => 'Webhook Secret',
+
+    'stripeverification_commerce_settings_tab' => 'Commerce',
+    'stripeverification_commerce_settings' => 'Commerce Settings',
+
+    'stripeverification_commerce_enabled' => 'Enabled',
+    'stripeverification_commerce_enabled_desc' => 'Enable to integration Commerce with Stripe Identity Verification.',
+    'stripeverification_commerce_subscription' => 'Subscription',
+    'stripeverification_commerce_subscription_desc' => 'The subscription the member must be subscribed to, to show their verification status.',
 
     'stripeverification_icon_settings' => 'Icon Settings',
 
@@ -51,6 +60,8 @@ $lang = [
 
     'stripverification_verified_button' => 'Start Verification Process',
     'stripverification_verified_message' => 'Your account was successfully verfied',
+    'stripverification_purchase_subscription_button' => 'Purchase Subscription',
+    'stripverification_purchase_subscription_message' => 'Identity Verification requires the purchase of a site subscription. Please purchase the subscription to continue the verification process.',
     'stripeverification_unverified_message' => 'You are not currently verified. Please start the verification process to get verified.',
     'stripeverification_processing_message' => 'Your verification is currently processing. Please wait for a notification within the next 24 hours to confirm your verification.',
     'stripeverification_submit_message' => 'Your verification request was submitted and is now processing. Please wait for a notification within the next 24 hours to confirm your verification.',
@@ -64,5 +75,5 @@ $lang = [
     'stripverification_verify' => 'Actions',
 
     'modperms__stripeverification_Verifications' => 'Verifications',
-    'can_manage_verifications' => 'Can manage verifications?'
+    'can_manage_verifications' => 'Can manage verifications?',
 ];

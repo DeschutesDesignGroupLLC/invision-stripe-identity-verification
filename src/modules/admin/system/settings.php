@@ -38,6 +38,7 @@ class _settings extends \IPS\Dispatcher\Controller
             $groups[$group->g_id] = $group->name;
         }
 
+        $form->addTab('stripeverification_stripe_settings_tab');
         $form->addHeader(\IPS\Member::loggedIn()->language()->addToStack('stripeverification_stripe_settings'));
         $form->add(new \IPS\Helpers\Form\Text('stripeverification_publishable_key', \IPS\Settings::i()->stripeverification_publishable_key, true));
         $form->add(new \IPS\Helpers\Form\Text('stripeverification_secret_key', \IPS\Settings::i()->stripeverification_secret_key, true));
@@ -55,7 +56,16 @@ class _settings extends \IPS\Dispatcher\Controller
             'multiple' => true,
         ]));
 
-        if ($values = $form->values()) {
+        if (\IPS\Application::appIsEnabled('nexus')) {
+            $form->addTab('stripeverification_commerce_settings_tab');
+            $form->addHeader(\IPS\Member::loggedIn()->language()->addToStack('stripeverification_commerce_settings'));
+            $form->add(new \IPS\Helpers\Form\YesNo('stripeverification_commerce_enabled', \IPS\Settings::i()->stripeverification_commerce_enabled));
+            $form->add(new \IPS\Helpers\Form\Node('stripeverification_commerce_subscription', \IPS\Settings::i()->stripeverification_commerce_subscription, false, [
+                'class' => \IPS\nexus\Subscription\Package::class,
+            ]));
+        }
+
+        if ($form->values()) {
             $form->saveAsSettings();
         }
 

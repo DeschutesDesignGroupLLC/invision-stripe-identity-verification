@@ -87,4 +87,16 @@ class _verification extends \IPS\Dispatcher\Controller
 
         \IPS\Output::i()->redirect(\IPS\Http\Url::internal('app=core&module=modcp&controller=modcp&tab=stripeverification', 'front', 'modcp_stripeverification'), 'modcp_stripeverification_unverified');
     }
+
+    /**
+     * @return void
+     */
+    protected function subscription()
+    {
+        if (\IPS\Application::appIsEnabled('nexus') && \IPS\Settings::i()->stripeverification_commerce_enabled && $package = \IPS\Settings::i()->stripeverification_commerce_subscription) {
+            \IPS\Output::i()->redirect(\IPS\Http\Url::internal('app=nexus&module=subscriptions&controller=subscriptions&id='.$package, 'front', 'nexus_subscription'));
+        }
+
+        \IPS\Output::i()->redirect(\IPS\Http\Url::internal(''));
+    }
 }
