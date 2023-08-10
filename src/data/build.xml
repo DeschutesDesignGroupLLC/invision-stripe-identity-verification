@@ -2,6 +2,8 @@
 <build>
  <module key="admin/system"><![CDATA[{"default_controller":"settings","protected":0,"default":0}]]></module>
  <module key="front/system"><![CDATA[{"default_controller":"","protected":false,"default":null}]]></module>
+ <setting key="stripeverification_commerce_enabled"><![CDATA[{"key":"stripeverification_commerce_enabled","default":""}]]></setting>
+ <setting key="stripeverification_commerce_subscription"><![CDATA[{"key":"stripeverification_commerce_subscription","default":""}]]></setting>
  <setting key="stripeverification_icon"><![CDATA[{"key":"stripeverification_icon","default":"fa fa-solid fa-circle-check"}]]></setting>
  <setting key="stripeverification_icon_color"><![CDATA[{"key":"stripeverification_icon_color","default":"#1778f2"}]]></setting>
  <setting key="stripeverification_publishable_key"><![CDATA[{"key":"stripeverification_publishable_key","default":""}]]></setting>

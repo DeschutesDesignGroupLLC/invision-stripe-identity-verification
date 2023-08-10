@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
- <app key="stripeverification" version="10004">
+ <app key="stripeverification" version="10005">
   <word key="__app_stripeverification" js="0">Stripe Identity Verification</word>
   <word key="menutab__stripeverification" js="0">Stripe Verification</word>
   <word key="menutab__stripeverification_icon" js="0">cc-stripe</word>
@@ -22,10 +22,17 @@
   <word key="mailsub__stripeverification_notification_verified" js="0">Verified</word>
   <word key="mailsub__stripeverification_notification_unverified" js="0">Unverified</word>
   <word key="stripeverification_userbar" js="0">Verification Status</word>
+  <word key="stripeverification_stripe_settings_tab" js="0">Stripe</word>
   <word key="stripeverification_stripe_settings" js="0">Stripe Settings</word>
   <word key="stripeverification_publishable_key" js="0">Publishable Key</word>
   <word key="stripeverification_secret_key" js="0">Secret Key</word>
   <word key="stripeverification_webhook_secret" js="0">Webhook Secret</word>
+  <word key="stripeverification_commerce_settings_tab" js="0">Commerce</word>
+  <word key="stripeverification_commerce_settings" js="0">Commerce Settings</word>
+  <word key="stripeverification_commerce_enabled" js="0">Enabled</word>
+  <word key="stripeverification_commerce_enabled_desc" js="0">Enable to integration Commerce with Stripe Identity Verification.</word>
+  <word key="stripeverification_commerce_subscription" js="0">Subscription</word>
+  <word key="stripeverification_commerce_subscription_desc" js="0">The subscription the member must be subscribed to, to show their verification status.</word>
   <word key="stripeverification_icon_settings" js="0">Icon Settings</word>
   <word key="stripeverification_icon_color" js="0">Color</word>
   <word key="stripeverification_icon_color_desc" js="0">The color of the verification icon.</word>
@@ -36,6 +43,8 @@
   <word key="stripeverification_verification_settings" js="0">Verification Settings</word>
   <word key="stripverification_verified_button" js="0">Start Verification Process</word>
   <word key="stripverification_verified_message" js="0">Your account was successfully verfied</word>
+  <word key="stripverification_purchase_subscription_button" js="0">Purchase Subscription</word>
+  <word key="stripverification_purchase_subscription_message" js="0">Identity Verification requires the purchase of a site subscription. Please purchase the subscription to continue the verification process.</word>
   <word key="stripeverification_unverified_message" js="0">You are not currently verified. Please start the verification process to get verified.</word>
   <word key="stripeverification_processing_message" js="0">Your verification is currently processing. Please wait for a notification within the next 24 hours to confirm your verification.</word>
   <word key="stripeverification_submit_message" js="0">Your verification request was submitted and is now processing. Please wait for a notification within the next 24 hours to confirm your verification.</word>
