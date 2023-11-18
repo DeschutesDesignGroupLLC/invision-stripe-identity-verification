@@ -80,7 +80,7 @@ class _settings extends \IPS\Dispatcher\Controller
         $form->addTab('stripeverification_debug');
         $form->addMessage('stripeverification_license_data_message');
         $form->add(new YesNo('stripeverification_license_status', Settings::i()->stripeverification_license_status, false, ['disabled' => true]));
-        $form->add(new Text('stripeverification_license_fetched', Settings::i()->stripeverification_license_fetched ? date('m/d/Y', Settings::i()->stripeverification_license_fetched) : null, false, ['disabled' => true]));
+        $form->add(new Text('stripeverification_license_fetched', Settings::i()->stripeverification_license_fetched ? date('m/d/Y', (int) Settings::i()->stripeverification_license_fetched) : null, false, ['disabled' => true]));
         $form->add(new Text('stripeverification_license_instance', Settings::i()->stripeverification_license_instance, false));
         $form->add(new Codemirror('stripeverification_license_status_payload', json_encode(json_decode(Settings::i()->stripeverification_license_status_payload), JSON_PRETTY_PRINT), false, ['disabled' => true, 'mode' => 'json']));
         $form->add(new Codemirror('stripeverification_license_activation_payload', json_encode(json_decode(Settings::i()->stripeverification_license_activation_payload), JSON_PRETTY_PRINT), false, ['disabled' => true, 'mode' => 'json']));
