@@ -124,7 +124,7 @@ class stripeverification_hook_Member extends _HOOK_CLASS_
      */
     public function get_verified()
     {
-        $verified = (bool) $this->verification?->verified;
+        $verified = $this->verification?->verified && \IPS\stripeverification\Manager\LicenseKey::i()->isValid();
 
         if (\IPS\Application::appIsEnabled('nexus') && \IPS\Settings::i()->stripeverification_commerce_enabled) {
             $verified = $verified && $this->verification_subscription;

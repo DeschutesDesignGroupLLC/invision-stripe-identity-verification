@@ -32,6 +32,18 @@ $lang = [
 
     'stripeverification_userbar' => 'Verification Status',
 
+    'stripeverification_license' => 'License Settings',
+    'stripeverification_license_key' => 'License Key',
+    'stripeverification_license_key_desc' => 'Your application license key. Manage your license keys at <a href="https://store.deschutesdesigngroup.com" target="_blank">https://store.deschutesdesigngroup.com</a>.',
+    'stripeverification_license_error' => 'Your license key is not valid or not active. Please update your license to keep using this product.',
+    'stripeverification_license_refreshed' => 'The license key data has been refreshed.',
+    'stripeverification_license_data_message' => 'The following information is useful in debugging your license key status. Do not change unless asked by support personnel.',
+    'stripeverification_license_status' => 'License Key Status',
+    'stripeverification_license_fetched' => 'License Key Data Last Fetched',
+    'stripeverification_license_instance' => 'License Key Instance ID',
+    'stripeverification_license_status_payload' => 'License Key Status Payload',
+    'stripeverification_license_activation_payload' => 'License Key Activation Payload',
+    'stripeverification_debug' => 'Debug Data',
     'stripeverification_stripe_settings_tab' => 'Stripe',
     'stripeverification_stripe_settings' => 'Stripe Settings',
 

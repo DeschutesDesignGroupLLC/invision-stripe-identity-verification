@@ -2,6 +2,12 @@
 
 namespace IPS\stripeverification\modules\admin\system;
 
+use IPS\Helpers\Form\Codemirror;
+use IPS\Helpers\Form\Text;
+use IPS\Helpers\Form\YesNo;
+use IPS\Settings;
+use IPS\stripeverification\Manager\LicenseKey;
+
 /* To prevent PHP errors (extending class does not exist) revealing path */
 if (! \defined('\IPS\SUITE_UNIQUE_KEY')) {
     header((isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0').' 403 Forbidden');
@@ -38,6 +44,12 @@ class _settings extends \IPS\Dispatcher\Controller
             $groups[$group->g_id] = $group->name;
         }
 
+        $form->addTab('stripeverification_license');
+        if (! LicenseKey::i()->isValid()) {
+            $form->addMessage('stripeverification_license_error', ' ipsMessage ipsMessage_error ipsType_reset ipsSpacer_top');
+        }
+        $form->add(new Text('stripeverification_license_key', Settings::i()->stripeverification_license_key, true));
+
         $form->addTab('stripeverification_stripe_settings_tab');
         $form->addHeader(\IPS\Member::loggedIn()->language()->addToStack('stripeverification_stripe_settings'));
         $form->add(new \IPS\Helpers\Form\Text('stripeverification_publishable_key', \IPS\Settings::i()->stripeverification_publishable_key, true));
@@ -64,6 +76,14 @@ class _settings extends \IPS\Dispatcher\Controller
                 'class' => \IPS\nexus\Subscription\Package::class,
             ]));
         }
+
+        $form->addTab('stripeverification_debug');
+        $form->addMessage('stripeverification_license_data_message');
+        $form->add(new YesNo('stripeverification_license_status', Settings::i()->stripeverification_license_status, false, ['disabled' => true]));
+        $form->add(new Text('stripeverification_license_fetched', Settings::i()->stripeverification_license_fetched ? date('m/d/Y', (int) Settings::i()->stripeverification_license_fetched) : null, false, ['disabled' => true]));
+        $form->add(new Text('stripeverification_license_instance', Settings::i()->stripeverification_license_instance, false));
+        $form->add(new Codemirror('stripeverification_license_status_payload', json_encode(json_decode(Settings::i()->stripeverification_license_status_payload), JSON_PRETTY_PRINT), false, ['disabled' => true, 'mode' => 'json']));
+        $form->add(new Codemirror('stripeverification_license_activation_payload', json_encode(json_decode(Settings::i()->stripeverification_license_activation_payload), JSON_PRETTY_PRINT), false, ['disabled' => true, 'mode' => 'json']));
 
         if ($form->values()) {
             $form->saveAsSettings();

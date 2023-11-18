@@ -1,0 +1,25 @@
+{
+    "normal": {
+        "added": [
+            "stripeverification_license",
+            "stripeverification_license_key",
+            "stripeverification_license_key_desc",
+            "stripeverification_license_error",
+            "stripeverification_license_refreshed",
+            "stripeverification_license_data_message",
+            "stripeverification_license_status",
+            "stripeverification_license_fetched",
+            "stripeverification_license_instance",
+            "stripeverification_license_status_payload",
+            "stripeverification_license_activation_payload",
+            "stripeverification_debug"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -6,6 +6,12 @@
  <setting key="stripeverification_commerce_subscription"><![CDATA[{"key":"stripeverification_commerce_subscription","default":""}]]></setting>
  <setting key="stripeverification_icon"><![CDATA[{"key":"stripeverification_icon","default":"fa fa-solid fa-circle-check"}]]></setting>
  <setting key="stripeverification_icon_color"><![CDATA[{"key":"stripeverification_icon_color","default":"#1778f2"}]]></setting>
+ <setting key="stripeverification_license_activation_payload"><![CDATA[{"key":"stripeverification_license_activation_payload","default":""}]]></setting>
+ <setting key="stripeverification_license_fetched"><![CDATA[{"key":"stripeverification_license_fetched","default":""}]]></setting>
+ <setting key="stripeverification_license_instance"><![CDATA[{"key":"stripeverification_license_instance","default":""}]]></setting>
+ <setting key="stripeverification_license_key"><![CDATA[{"key":"stripeverification_license_key","default":""}]]></setting>
+ <setting key="stripeverification_license_status"><![CDATA[{"key":"stripeverification_license_status","default":""}]]></setting>
+ <setting key="stripeverification_license_status_payload"><![CDATA[{"key":"stripeverification_license_status_payload","default":""}]]></setting>
  <setting key="stripeverification_publishable_key"><![CDATA[{"key":"stripeverification_publishable_key","default":""}]]></setting>
  <setting key="stripeverification_secret_key"><![CDATA[{"key":"stripeverification_secret_key","default":""}]]></setting>
  <setting key="stripeverification_verification_group"><![CDATA[{"key":"stripeverification_verification_group","default":""}]]></setting>

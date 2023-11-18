@@ -1,0 +1,10 @@
+{
+  "preset": "laravel",
+  "exclude": [
+    "data",
+    "dev",
+    "hooks",
+    "interface",
+    "setup"
+  ]
+}
