@@ -12,7 +12,11 @@ class _LicenseKey extends Singleton
     public function isValid(): bool
     {
         if (! Settings::i()->stripeverification_license_instance) {
-            $this->activateLicense();
+            $response = $this->activateLicense();
+
+            if (array_key_exists('activated', $response) && $response['activated'] === false) {
+                return false;
+            }
         }
 
         if (! Settings::i()->stripeverification_license_fetched || ! Settings::i()->stripeverification_license_status || Settings::i()->stripeverification_license_fetched < (time() - 1814400)) {
@@ -54,7 +58,7 @@ class _LicenseKey extends Singleton
         return $valid;
     }
 
-    protected function activateLicense(): void
+    protected function activateLicense(): ?array
     {
         $response = Url::external('https://api.lemonsqueezy.com/v1/licenses/activate')
             ->request()
@@ -79,5 +83,7 @@ class _LicenseKey extends Singleton
         ]);
 
         Log::log("Activated license key. Payload: $payload", 'stripeverification');
+
+        return $content;
     }
 }
