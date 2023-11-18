@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <javascript app="stripeverification">
- <file javascript_app="stripeverification" javascript_location="front" javascript_path="controllers/verification" javascript_name="ips.verification.main.js" javascript_type="controller" javascript_version="10007" javascript_position="1000050"><![CDATA[;( function($, _, undefined){
+ <file javascript_app="stripeverification" javascript_location="front" javascript_path="controllers/verification" javascript_name="ips.verification.main.js" javascript_type="controller" javascript_version="10008" javascript_position="1000050"><![CDATA[;( function($, _, undefined){
     "use strict";
 
     ips.controller.register('stripeverification.front.verification.main', {

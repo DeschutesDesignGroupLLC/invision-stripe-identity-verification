@@ -5,6 +5,8 @@ namespace IPS\stripeverification\modules\admin\system;
 use IPS\Helpers\Form\Codemirror;
 use IPS\Helpers\Form\Text;
 use IPS\Helpers\Form\YesNo;
+use IPS\Http\Url;
+use IPS\Output;
 use IPS\Settings;
 use IPS\stripeverification\Manager\LicenseKey;
 
@@ -19,23 +21,15 @@ if (! \defined('\IPS\SUITE_UNIQUE_KEY')) {
  */
 class _settings extends \IPS\Dispatcher\Controller
 {
-    /**
-     * Execute
-     *
-     * @return	void
-     */
-    public function execute()
+    public static bool $csrfProtected = true;
+
+    public function execute(): void
     {
         \IPS\Dispatcher::i()->checkAcpPermission('settings_manage');
         parent::execute();
     }
 
-    /**
-     * ...
-     *
-     * @return	void
-     */
-    protected function manage()
+    protected function manage(): void
     {
         $form = new \IPS\Helpers\Form;
 
@@ -90,6 +84,18 @@ class _settings extends \IPS\Dispatcher\Controller
         }
 
         \IPS\Output::i()->title = \IPS\Member::loggedIn()->language()->addToStack('settings');
+        Output::i()->sidebar['actions']['refresh'] = [
+            'icon' => 'refresh',
+            'link' => Url::internal('app=stripeverification&module=system&controller=settings&do=refresh'),
+            'title' => 'license_refresh',
+        ];
         \IPS\Output::i()->output = $form;
+    }
+
+    protected function refresh(): void
+    {
+        LicenseKey::i()->fetchLicenseStatus();
+
+        Output::i()->redirect(Url::internal('app=stripeverification&module=system&controller=settings'), 'stripeverification_license_refreshed');
     }
 }
