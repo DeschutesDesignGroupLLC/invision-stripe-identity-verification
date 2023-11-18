@@ -1,0 +1,12 @@
+{
+    "added": [
+        "stripeverification_license_activation_payload",
+        "stripeverification_license_fetched",
+        "stripeverification_license_instance",
+        "stripeverification_license_key",
+        "stripeverification_license_status",
+        "stripeverification_license_status_payload"
+    ],
+    "edited": [],
+    "removed": []
+}

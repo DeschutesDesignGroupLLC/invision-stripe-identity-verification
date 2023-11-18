@@ -16,6 +16,30 @@
         "default": "#1778f2"
     },
     {
+        "key": "stripeverification_license_activation_payload",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_license_fetched",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_license_instance",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_license_key",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_license_status",
+        "default": ""
+    },
+    {
+        "key": "stripeverification_license_status_payload",
+        "default": ""
+    },
+    {
         "key": "stripeverification_publishable_key",
         "default": ""
     },
