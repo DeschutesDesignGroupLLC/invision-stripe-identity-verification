@@ -1,0 +1,16 @@
+{
+    "normal": {
+        "added": [
+            "stripeverification_license_refresh_title",
+            "stripeverification_license_reset_title",
+            "stripeverification_license_reset"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}
