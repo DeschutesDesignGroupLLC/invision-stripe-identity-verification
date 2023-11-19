@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
- <app key="stripeverification" version="10008">
+ <app key="stripeverification" version="10009">
   <word key="__app_stripeverification" js="0">Stripe Identity Verification</word>
   <word key="menutab__stripeverification" js="0">Stripe Verification</word>
   <word key="menutab__stripeverification_icon" js="0">cc-stripe</word>
@@ -26,7 +26,10 @@
   <word key="stripeverification_license_key" js="0">License Key</word>
   <word key="stripeverification_license_key_desc" js="0"><![CDATA[Your application license key. Manage your license keys at <a href="https://store.deschutesdesigngroup.com" target="_blank">https://store.deschutesdesigngroup.com</a>.]]></word>
   <word key="stripeverification_license_error" js="0">Your license key is not valid or not active. Please update your license to keep using this product.</word>
+  <word key="stripeverification_license_refresh_title" js="0">Refresh License Key Data</word>
   <word key="stripeverification_license_refreshed" js="0">The license key data has been refreshed.</word>
+  <word key="stripeverification_license_reset_title" js="0">Reset License Key Data</word>
+  <word key="stripeverification_license_reset" js="0">Your license key data has been reset.</word>
   <word key="stripeverification_license_data_message" js="0">The following information is useful in debugging your license key status. Do not change unless asked by support personnel.</word>
   <word key="stripeverification_license_status" js="0">License Key Status</word>
   <word key="stripeverification_license_fetched" js="0">License Key Data Last Fetched</word>

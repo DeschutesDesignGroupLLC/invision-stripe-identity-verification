@@ -39,12 +39,13 @@ class _settings extends \IPS\Dispatcher\Controller
         }
 
         $form->addTab('stripeverification_license');
-        if (! LicenseKey::i()->isValid()) {
-            $form->addMessage('stripeverification_license_error', ' ipsMessage ipsMessage_error ipsType_reset ipsSpacer_top');
-        }
-        $form->add(new Text('stripeverification_license_key', Settings::i()->stripeverification_license_key, true));
+        $form->add(new Text('stripeverification_license_key', Settings::i()->stripeverification_license_key, true, [], function ($value) {
+            if (! LicenseKey::i()->fetchLicenseStatus(true, $value)) {
+                throw new \DomainException('The license key you entered is not valid.');
+            }
+        }));
 
-        $form->addTab('stripeverification_stripe_settings_tab');
+        $form->addTab('stripeverification_stripe_settings');
         $form->addHeader(\IPS\Member::loggedIn()->language()->addToStack('stripeverification_stripe_settings'));
         $form->add(new \IPS\Helpers\Form\Text('stripeverification_publishable_key', \IPS\Settings::i()->stripeverification_publishable_key, true));
         $form->add(new \IPS\Helpers\Form\Text('stripeverification_secret_key', \IPS\Settings::i()->stripeverification_secret_key, true));
@@ -63,7 +64,7 @@ class _settings extends \IPS\Dispatcher\Controller
         ]));
 
         if (\IPS\Application::appIsEnabled('nexus')) {
-            $form->addTab('stripeverification_commerce_settings_tab');
+            $form->addTab('stripeverification_commerce_settings');
             $form->addHeader(\IPS\Member::loggedIn()->language()->addToStack('stripeverification_commerce_settings'));
             $form->add(new \IPS\Helpers\Form\YesNo('stripeverification_commerce_enabled', \IPS\Settings::i()->stripeverification_commerce_enabled));
             $form->add(new \IPS\Helpers\Form\Node('stripeverification_commerce_subscription', \IPS\Settings::i()->stripeverification_commerce_subscription, false, [
@@ -73,9 +74,9 @@ class _settings extends \IPS\Dispatcher\Controller
 
         $form->addTab('stripeverification_debug');
         $form->addMessage('stripeverification_license_data_message');
-        $form->add(new YesNo('stripeverification_license_status', Settings::i()->stripeverification_license_status, false, ['disabled' => true]));
-        $form->add(new Text('stripeverification_license_fetched', Settings::i()->stripeverification_license_fetched ? date('m/d/Y', (int) Settings::i()->stripeverification_license_fetched) : null, false, ['disabled' => true]));
-        $form->add(new Text('stripeverification_license_instance', Settings::i()->stripeverification_license_instance, false));
+        $form->add(new YesNo('stripeverification_license_status', LicenseKey::i()->isValid(), false, ['disabled' => true]));
+        $form->add(new Text('stripeverification_license_fetched', Settings::i()->stripeverification_license_fetched ? date('m/d/Y h:i A', (int) Settings::i()->stripeverification_license_fetched) : null, false, ['disabled' => true]));
+        $form->add(new Text('stripeverification_license_instance', Settings::i()->stripeverification_license_instance, false, ['disabled' => true]));
         $form->add(new Codemirror('stripeverification_license_status_payload', json_encode(json_decode(Settings::i()->stripeverification_license_status_payload), JSON_PRETTY_PRINT), false, ['disabled' => true, 'mode' => 'json']));
         $form->add(new Codemirror('stripeverification_license_activation_payload', json_encode(json_decode(Settings::i()->stripeverification_license_activation_payload), JSON_PRETTY_PRINT), false, ['disabled' => true, 'mode' => 'json']));
 
@@ -87,15 +88,27 @@ class _settings extends \IPS\Dispatcher\Controller
         Output::i()->sidebar['actions']['refresh'] = [
             'icon' => 'refresh',
             'link' => Url::internal('app=stripeverification&module=system&controller=settings&do=refresh'),
-            'title' => 'license_refresh',
+            'title' => 'stripeverification_license_refresh_title',
+        ];
+        Output::i()->sidebar['actions']['reset'] = [
+            'icon' => 'trash',
+            'link' => Url::internal('app=stripeverification&module=system&controller=settings&do=reset'),
+            'title' => 'stripeverification_license_reset_title',
         ];
         \IPS\Output::i()->output = $form;
     }
 
     protected function refresh(): void
     {
-        LicenseKey::i()->fetchLicenseStatus();
+        LicenseKey::i()->fetchLicenseStatus(true);
 
         Output::i()->redirect(Url::internal('app=stripeverification&module=system&controller=settings'), 'stripeverification_license_refreshed');
+    }
+
+    protected function reset(): void
+    {
+        LicenseKey::i()->resetLicenseKeyData();
+
+        Output::i()->redirect(Url::internal('app=stripeverification&module=system&controller=settings'), 'stripeverification_license_reset');
     }
 }
